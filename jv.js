@@ -16,7 +16,7 @@ function mcmmoaxe() {
     if(axes.level > 750){
         axes.crit - 37.5
     }else{
-        axes.crit = axes.level*0.05
+        axes.crit = Math.abs(axes.level*0.05)
     }
-    alert("Level "+ String(axes.level)+ "\nDeal "+String(axes.dmg)+ " damage to armour\nbonus "+ String(axes.mas)+" damage\n"+String(axes.crit)+"% chance to Crit")
+    alert("Level "+ String(axes.level)+ "\nDeal "+String(axes.dmg)+ " damage to armour\nbonus "+ String(axes.mas)+" damage\n"+String((axes.crit).toFixed(2))+"% chance to Crit")
 }
