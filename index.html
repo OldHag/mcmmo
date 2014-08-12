@@ -3,16 +3,40 @@
     <head>
         <script src="jv.js"></script>
     </head>
-    <body>
+    <body onload="rAxes();rBow()">
         <table style="width: 100%">
             <tr>
                 <td>
                     <button onmousedown="mcmmoaxe()">Axes</button>
                 </td>
+                <td>
+                    <span id="axelevel"></span>
+                </td>
+                <td>
+                    <span id="axeadmg"></span>
+                </td>
+                <td>
+                    <span id="axebdmg"></span>
+                </td>
+                <td>
+                    <span id="axecrit"></span>
+                </td>
             </tr>
             <tr>
                 <td>
                     <button onmousedown="mcmmobow()">Archery</button>
+                </td>
+                <td>
+                    <span id="bowlevel"></span>
+                </td>
+                <td>
+                    <span id="bowbd"></span>
+                </td>
+                <td>
+                    <span id="bowdaze"></span>
+                </td>
+                <td>
+                    <span id="bowrtr"></span>
                 </td>
             </tr>
             <!--

@@ -1,4 +1,4 @@
-axes = {
+  axes = {
         level: 0,
         mas: 0,
         dmg: 1,
@@ -10,6 +10,12 @@ bows = {
   bd: 0,
   daze: 0,
   rtr: 0
+}
+function rAxes() {
+  document.getElementById('axelevel').innerHTML = "Level "+ String(axes.level);
+  document.getElementById('axeadmg').innerHTML = "Deal "+String(axes.dmg)+ " damage to armour";
+  document.getElementById('axebdmg').innerHTML = "bonus "+ String(axes.mas)+" damage";
+  document.getElementById('axecrit').innerHTML = String(axes.crit)+"% chance to Crit"
 }
 function mcmmoaxe() {
     axes.level=prompt("Axes Level");
@@ -24,7 +30,13 @@ function mcmmoaxe() {
     }else{
         axes.crit = Math.abs(axes.level*0.05).toFixed(2)
     }
-    alert("Level "+ String(axes.level)+ "\nDeal "+String(axes.dmg)+ " damage to armour\nbonus "+ String(axes.mas)+" damage\n"+String(axes.crit)+"% chance to Crit")
+    rAxes();
+}
+function rBow() {
+  document.getElementById('bowlevel').innerHTML = "Level "+String(bows.level);
+  document.getElementById('bowbd').innerHTML = "Skill Shot Bonus Damage "+String(bows.bd)+"%";
+  document.getElementById('bowdaze').innerHTML = "Daze Chance "+String(bows.daze)+"%";
+  document.getElementById('bowrtr').innerHTML = "Chance to retrieve Arrows "+String(bows.rtr)+"%"
 }
 function mcmmobow() {
   bows.level=prompt("Archery Level");
@@ -37,5 +49,5 @@ function mcmmobow() {
     bows.bd = Math.abs(bows.level*0.2).toFixed(2);
     bows.rtr = Math.abs(bows.level*0.1).toFixed(2);
   }
-  alert("Level "+String(bows.level)+"\nSkill Shot Bonus Damage "+String(bows.bd)+"%\nDaze Chance "+String(bows.daze)+"%\nChance to retrieve Arrows "+String(bows.rtr)+"%")
+  rBow();
 }
