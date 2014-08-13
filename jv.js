@@ -1,15 +1,21 @@
-  axes = {
-        level: 0,
-        mas: 0,
-        dmg: 1,
-        crit: 0,
-        sks: 2
-    };
+axes = {
+  level: 0,
+  mas: 0,
+  dmg: 1,
+  crit: 0,
+  sks: 2
+};
 bows = {
   level: 0,
   bd: 0,
   daze: 0,
   rtr: 0
+}
+acro = {
+  level: 0,
+  roll: 0,
+  groll: 0,
+  dodge: 0
 }
 function rAxes() {
   document.getElementById('axelevel').innerHTML = "Level "+ String(axes.level);
@@ -50,4 +56,29 @@ function mcmmobow() {
     bows.rtr = Math.abs(bows.level*0.1).toFixed(2);
   }
   rBow();
+}
+function rAcro() {
+  document.getElementById('acrolevel').innerHTML = "Level "+String(acro.level);
+  document.getElementById('acroroll').innerHTML = "Roll Chance "+String(acro.roll)+"%";
+  document.getElementById('acrogroll').innerHTML = "Gracefull Roll Chance "+String(acro.groll)+"%";
+  document.getElementById('acrododge').innerHTML = "Dodge Chance "+String(acro.dodge)+"%";
+}
+function mcmmoacro() {
+  acro.level = prompt('Acrobatics Level');
+  if(acro.level > 800){
+    acro.dodge = 20
+  }else{
+    acro.dodge = Math.abs(acro.level*0.025).toFixed(3)
+  }
+  if(acro.level > 500){
+    acro.groll = 100
+  }else{
+    acro.groll = Math.abs(acro.level*0.2).toFixed(2)
+  }
+  if(acro.level > 1000){
+    acro.roll = 100
+  }else{
+    acro.roll = Math.abs(acro.level*0.1).toFixed(2)
+  }
+  rAcro();
 }
