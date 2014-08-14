@@ -37,6 +37,7 @@ function mcmmoaxe() {
         axes.crit = Math.abs(axes.level*0.05).toFixed(2)
     }
     rAxes();
+    ga('send', 'event', 'Axes', 'Axes '+axes.level)
 }
 function rBow() {
   document.getElementById('bowlevel').innerHTML = "Level "+String(bows.level);
@@ -56,6 +57,7 @@ function mcmmobow() {
     bows.rtr = Math.abs(bows.level*0.1).toFixed(2);
   }
   rBow();
+  ga('send', 'event', 'Bows', 'Bows '+bows.level)
 }
 function rAcro() {
   document.getElementById('acrolevel').innerHTML = "Level "+String(acro.level);
@@ -81,4 +83,5 @@ function mcmmoacro() {
     acro.roll = Math.abs(acro.level*0.1).toFixed(2)
   }
   rAcro();
+  ga('send', 'event', 'Acrobatics', 'Acrobatics '+acro.level)
 }
